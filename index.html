@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <style>
+        /* Basic Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        /* Navigation Bar */
+        header {
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+        nav h1 {
+            font-size: 1.5rem;
+            color: #2563eb;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        nav ul a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav ul a:hover {
+            color: #2563eb;
+        }
+
+        /* Container Alignment */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #2563eb;
+            border-radius: 2px;
+        }
+
+        /* Hero / Introduction Section */
+        #hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        #hero h1 {
+            font-size: 3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        #hero p {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+        .btn-primary {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* About & Skills Layout */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .skills-list li {
+            background-color: #e2e8f0;
+            color: #334155;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .project-info {
+            padding: 1.5rem;
+        }
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+        .project-info p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .project-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Contact Section Form styling */
+        form {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #334155;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.375rem;
+            outline: none;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: #0f172a;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #1e293b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Developer Portfolio</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Hi, I'm a Software Developer</h1>
+        <p>Specializing in web development, automated data extraction pipelines, and building scalable clean web applications.</p>
+        <a href="#projects" class="btn-primary">View My Work</a>
+    </section>
+
+    <section id="about" class="container">
+        <div class="about-grid">
+            <div>
+                <h2>About Me</h2>
+                <p>I am a passionate software engineer focused on structural data processing and clean system architectures. I love solving structural logic puzzles, optimizing backend queries, and transforming functional design layouts into functional, high-performance interfaces.</p>
+                <br>
+                <p>Whether it's designing complex data matrices or setting up custom validation layers for user input flows, I build with attention to precision, performance, and accessibility.</p>
+            </div>
+            <div>
+                <h2>Core Skills</h2>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>HTML5 / CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Web Scraping</li>
+                    <li>Database Logic</li>
+                    <li>Git / Version Control</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container" style="border-top: 1px solid #e2e8f0;">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Industrial Data Catalog Pipeline</h3>
+                    <p>Built a robust, high-throughput web automation scraper capable of mining thousands of structural engineering and component records cleanly into system matrices.</p>
+                    <a href="#" class="project-link">View Repository &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Dynamic Layout Render Engine</h3>
+                    <p>Developed an algorithmic grid mapping interface designed to calculate matrix blocks and structural layouts seamlessly on frontend view templates.</p>
+                    <a href="#" class="project-link">View Repository &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Secure Input Validation Guard</h3>
+                    <p>An accessible system form framework featuring complex regular expression handling and context isolation patterns for processing security tokens.</p>
+                    <a href="#" class="project-link">View Repository &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="border-top: 1px solid #e2e8f0;">
+        <h2>Get In Touch</h2>
+        <p style="text-align: center; color: #64748b; margin-bottom: 2rem;">Have a question or want to collaborate on a script? Drop a message below!</p>
+        
+        <form action="#" method="POST">
+            <fieldset style="border: none;">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="sender_name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="sender_email" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message Details</label>
+                    <textarea id="message" name="sender_message" rows="5" placeholder="Describe your project or requirement here..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Send Message</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Developer Portfolio. Built with structured Semantic HTML.</p>
+    </footer>
+
+</body>
+</html>

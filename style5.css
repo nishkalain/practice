@@ -1,0 +1,152 @@
+/* Base Workspace Setup */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.assignment-list {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Requirement 1: Unique Style Assignment Page Title */
+.portal-title {
+    text-align: center;
+    font-family: 'Consolas', monospace;
+    font-size: 2.5rem;
+    color: #0f172a;
+    border-bottom: 2px dashed #cbd5e1;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+.portal-title span {
+    color: #6366f1;
+    font-weight: 300;
+}
+
+/* Requirement 2: Common Assignment Card Design */
+.assignment-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Requirement 6: Alternate assignment cards have different backgrounds */
+.assignment-card:nth-child(even) {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* Title Header Element */
+.assignment-title {
+    font-size: 1.35rem;
+    color: #1e293b;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Requirement 8: Add a document icon before every assignment title */
+.assignment-title::before {
+    content: "📄 ";
+    font-size: 1.25rem;
+    margin-right: 10px;
+}
+
+/* Requirement 9: Add a submission status badge after completed assignments */
+.completed::after {
+    content: "✓ Turned In";
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #10b981;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 12px;
+}
+
+/* Requirement 3: Assignment descriptions have a different color */
+.assignment-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* Requirement 10: First letter of assignment descriptions is larger */
+.assignment-desc::first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+/* Decorative Info */
+.meta-info {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+/* Requirement 4: First assignment displays "New Assignment" */
+.assignment-card:first-child::after {
+    content: "NEW";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background-color: #6366f1;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Requirement 5: Last assignment displays "Deadline Soon" */
+.assignment-card:last-child::after {
+    content: "⚠️ DEADLINE SOON";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Submission Button Style */
+.submit-btn {
+    background-color: #0f172a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Requirement 7: Submission button reacts on hover */
+.submit-btn:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}

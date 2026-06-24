@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card - CSS Box Model Assignment</title>
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        * {
+            box-sizing: border-box; /* Ensures padding and border are included in total width/height */
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* --- THE ID CARD CONTAINER (Outer Box) --- */
+        .id-card {
+            width: 450px;
+            height: 270px;
+            background-color: #ffffff;
+            
+            /* Box Model Properties */
+            border: 3px solid #1a237e;
+            margin: 20px;
+            /* Padding is omitted here to let the header span full width */
+            
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- HEADER BANNER --- */
+        .card-header {
+            background-color: #1a237e;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 1.5px;
+
+            /* Box Model Properties */
+            padding: 12px 0; 
+            width: 100%;
+        }
+
+        /* --- MAIN CONTENT AREA (Flex container for split layout) --- */
+        .card-body {
+            display: flex;
+            
+            /* Box Model Properties */
+            padding: 15px; 
+            height: calc(100% - 49px); /* Remaining height after header */
+        }
+
+        /* --- LEFT COLUMN: PROFILE PHOTO --- */
+        .photo-box {
+            /* Box Model Properties */
+            width: 130px;
+            height: 160px;
+            border: 2px solid #1a237e;
+            margin-right: 20px; 
+            
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Placeholder graphic if no image is supplied */
+        .photo-placeholder {
+            color: #757575;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* --- RIGHT COLUMN: DETAILS & DATA --- */
+        .details-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Grid info rows */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #333333;
+            vertical-align: top;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #757575;
+            width: 75px;
+        }
+
+        .value {
+            font-weight: 700;
+            color: #111111;
+        }
+
+        /* --- FOOTER: COMPANY NAME --- */
+        .card-footer {
+            text-align: right;
+            margin-top: auto; /* Pushes the company name to the absolute bottom of the body */
+        }
+
+        .company-name {
+            font-size: 26px;
+            font-weight: 900;
+            color: #111111;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="id-card">
+        
+        <div class="card-header">
+            IDENTIFICATION CARD
+        </div>
+
+        <div class="card-body">
+            
+            <div class="photo-box">
+                <div class="photo-placeholder">
+                    [ PHOTO BOX ]
+                </div>
+            </div>
+
+            <div class="details-box">
+                <table class="info-table">
+                    <tr>
+                        <td class="label">Name:</td>
+                        <td class="value">JOHN DOE</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Title:</td>
+                        <td class="value">Director</td>
+                    </tr>
+                    <tr>
+                        <td class="label">ID No:</td>
+                        <td class="value">123456</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Issued:</td>
+                        <td class="value">01/01/2020</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Expires:</td>
+                        <td class="value">31/12/2020</td>
+                    </tr>
+                </table>
+
+                <div class="card-footer">
+                    <div class="company-name">COMPANY</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

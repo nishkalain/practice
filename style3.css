@@ -1,0 +1,117 @@
+/* Base Layout Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 30px;
+}
+
+.employee-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Requirement 1: Unique Company Name Style */
+.company-name {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+}
+.company-name span {
+    color: #3498db;
+    border-bottom: 3px solid #3498db;
+}
+
+/* Requirement 2: Common Employee Card Design */
+.employee-card {
+    background-color: #ffffff;
+    border-left: 5px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+/* Requirement 10: Highlight alternate employee cards */
+.employee-card:nth-child(even) {
+    border-left-color: #7f8c8d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Requirement 3: Employee Names Stand Out */
+.employee-name {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Requirement 9: Employee icon before every employee name */
+.employee-name::before {
+    content: "👤 ";
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* Requirement 4: Employee details inside cards have a different color */
+.employee-details p {
+    margin: 5px 0;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* Special styling to identify the Team Lead structural anchor */
+.team-lead {
+    border-left-color: #2c3e50;
+}
+
+/* Requirement 6: All employees appearing after Team Lead have a light background */
+.team-lead ~ .employee-card {
+    background-color: #f9fbfd;
+    border-left-color: #aed6f1;
+}
+
+/* Requirement 5: Employee immediately after Team Lead is highly highlighted */
+/* Uses adjacent sibling combinator (+) and higher specificity to override Req 6 */
+.team-lead + .employee-card {
+    background-color: #e8f4f8;
+    border: 2px solid #3498db;
+    border-left: 6px solid #3498db;
+    transform: scale(1.02);
+}
+
+/* Requirement 7: First employee marked as "Star Performer" */
+.employee-card:first-child::after {
+    content: "⭐ Star Performer";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #f1c40f;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+/* Requirement 8: Last employee marked as "Support Team" */
+.employee-card:last-child::after {
+    content: "🛠️ Support Team";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #e67e22;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 20px;
+}

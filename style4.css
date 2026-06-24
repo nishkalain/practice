@@ -1,0 +1,150 @@
+/* Base Page Setup */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #faf6f0;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Requirement 1: Unique Restaurant Name Styling */
+.restaurant-name {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.2rem;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+.restaurant-name span {
+    color: #c5a059; /* Elegant gold tone */
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+/* Requirement 2: Common Menu Item Styling */
+.menu-item {
+    background-color: #ffffff;
+    border: 1px solid #eae1d4;
+    padding: 25px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Requirement 6: Alternate menu items have different backgrounds */
+.menu-item:nth-child(even) {
+    background-color: #f5eedf;
+}
+
+/* Dish Title Styling */
+.dish-name {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Requirement 7: Plate icon before every menu item */
+.dish-name::before {
+    content: "🍽️ ";
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+/* Requirement 8: "Chef Special" badge after selected dishes */
+.chef-special::after {
+    content: "Chef Special";
+    font-size: 0.75rem;
+    color: #ffffff;
+    background-color: #d9381e;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-left: 12px;
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+}
+
+/* Requirement 3: Menu item descriptions have a different text color */
+.dish-description {
+    color: #6e6e6e;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Requirement 10: First letter of each menu description is larger */
+.dish-description::first-letter {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #c5a059;
+}
+
+/* Price tag styling */
+.price {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #c5a059;
+    margin-bottom: 15px;
+}
+
+/* Requirement 4: First menu item displays "Most Ordered" */
+.menu-item:first-child::after {
+    content: "⭐ Most Ordered";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: #c5a059;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Requirement 5: Last menu item displays "Chef Recommendation" */
+.menu-item:last-child::after {
+    content: "👨‍🍳 Chef Recommendation";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Buttons and Requirement 9: Hover reaction */
+.order-btn {
+    display: block;
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    letter-spacing: 2px;
+}

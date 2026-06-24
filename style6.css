@@ -1,0 +1,170 @@
+/* Base Workspace Setup */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #141414; /* Classic dark theme */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Requirement 1: Style Navigation Links */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.logo {
+    color: #e50914; /* Iconic cinematic red */
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: #e5e5e5;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #b3b3b3;
+}
+
+/* Requirement 2: Highlight the Active Menu Item */
+.nav-link.active {
+    color: #ffffff;
+    font-weight: 700;
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 4px;
+}
+
+/* Grid Layout */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 40px 60px;
+}
+
+/* Requirement 3: Common Movie Card Design */
+.movie-card {
+    background-color: #181818;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.thumbnail {
+    background-color: #2f2f2f;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Requirement 6: Alternate movie cards have different backgrounds */
+.movie-card:nth-child(even) {
+    background-color: #222222;
+}
+
+/* Requirement 9: Movie cards react on hover */
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+/* Movie Title Details */
+.movie-title {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 15px 15px 8px 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Requirement 7: Add a play icon before movie titles */
+.movie-title::before {
+    content: "▶ ";
+    color: #e50914;
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+/* Requirement 8: Add a rating badge after trending movies */
+.trending::after {
+    content: "Top 10";
+    font-size: 0.65rem;
+    background-color: #e50914;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Movie Descriptions */
+.movie-desc {
+    color: #999;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0 15px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Requirement 10: Movie descriptions have styled first letters */
+.movie-desc::first-letter {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e50914;
+    margin-right: 1px;
+}
+
+/* Requirement 4: First movie displays "Top Pick" badge */
+.movie-card:first-child::after {
+    content: "⭐ TOP PICK";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid #ffcc00;
+    color: #ffcc00;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+/* Requirement 5: Last movie displays "Recently Added" badge */
+.movie-card:last-child::after {
+    content: "🆕 NEW EPISODES";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #0080ff;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}

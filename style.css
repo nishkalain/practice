@@ -1,0 +1,160 @@
+/* Base Container Setup */
+body {
+    background-color: #f1f5f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   ASSIGNMENT SELECTOR REQUIREMENTS
+   ========================================================================== */
+
+/* Requirement 1: Unique website title appearance using an ID selector */
+#dashboard-title {
+    text-align: center;
+    color: #1e3a8a;
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #3b82f6;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+/* Requirement 2: Consistent student card design using a Class selector */
+.student-card {
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 24px;
+    width: 45%;
+    min-width: 300px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: relative; /* Position relative to hold the top performer badge */
+    box-sizing: border-box;
+}
+
+/* Requirement 3: Student names appearing differently using Class/Descendant selector */
+.student-name {
+    color: #0f172a;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-left: 4px solid #3b82f6;
+    padding-left: 10px;
+}
+
+/* Requirement 4: Course descriptions inside student cards have a different color */
+.student-card .course-desc {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Requirement 5: Highlight first student card as "Top Performer" using :first-child */
+.student-card:first-child {
+    border: 2px solid #eab308;
+    background-color: #fef08a; /* Soft golden tint background */
+}
+
+/* Creating the visual text label via CSS pseudo-element to isolate design rules */
+.student-card:first-child::before {
+    content: "🏆 Top Performer";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: #eab308;
+    color: #000;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Requirement 6: Every alternate student card has a different background using :nth-child(even) */
+.student-card:nth-child(even) {
+    background-color: #f8fafc; /* Subtle grayish tint for alternating cards */
+}
+
+/* Requirement 7: Add a graduation cap icon before every course name using ::before */
+.course-name::before {
+    content: "🎓 ";
+    font-size: 18px;
+}
+
+/* Base style for course name */
+.course-name {
+    color: #1e293b;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+/* Requirement 8: Add a "Certified" badge after every completed course using ::after */
+.completed::after {
+    content: "Certified";
+    background-color: #10b981; /* Green color badge */
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Requirement 9: Enroll button reacts when a user hovers over it using :hover */
+.enroll-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+.enroll-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Requirement 10: First letter of student description is larger using ::first-letter */
+.student-desc::first-letter {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1e3a8a;
+    float: left;
+    margin-right: 4px;
+    line-height: 1;
+}
+
+.student-desc {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    clear: both;
+}

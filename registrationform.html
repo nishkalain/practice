@@ -1,0 +1,140 @@
+
+<html >
+<head>
+   
+    <title>User Registration Form</title>
+</head>
+<body>
+
+    <center>
+       
+        <fieldset style="width: 530px; padding: 25px; margin-top: 30px;">
+            <legend><h2><b>Registration Form</b></h2></legend>
+            
+            <form action="/submit-registration" method="POST">
+                
+              
+                <table cellpadding="8" cellspacing="0" border="0" width="100%">
+                    
+                 
+                    <tr>
+                        <td align="right" width="35%"><label for="firstname"><b>First Name:</b></label></td>
+                        <td><input type="text" id="firstname" name="firstname" placeholder="enter first Name" required></td>
+                    </tr>
+                    
+                  
+                    
+                    <tr>
+                        <td align="right"><label for="lastname"><b>Last Name:</b></label></td>
+                        <td><input type="text" id="lastname" name="lastname" placeholder="enter the last name" required></td>
+                    </tr>
+                    
+              
+                    <tr>
+                        <td align="right"><label for="email"><b>Email Address:</b></label></td>
+                        <td><input type="email" id="email" name="email" placeholder="enter the email address" required></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td align="right"><label for="password"><b>Password:</b></label></td>
+                        <td><input type="password" id="password" name="password" placeholder="" required></td>
+                    </tr>
+                    
+                   
+                    
+                    <tr>
+                        <td align="right" valign="top"><b>Gender:</b></td>
+                        <td>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                       
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                            <br>       <input type="radio" id="other" name="gender" value="other">
+                            <label for="other">Other</label>
+                        </td>
+                    </tr>
+                    
+                   
+                    <tr>
+                        <td align="right"><label for="age"><b>Age:</b></label></td>
+                        <td><input type="number" id="age" name="age" min="1" max="120" placeholder=""></td>
+                    </tr>
+                    
+                 
+                    
+                    <tr>
+                        <td align="right" valign="top"><b> Preferences:</b></td>
+                        <td>
+                            <input type="checkbox" id="acrylic" name="preferences" value="acrylic">
+                            <label for="acrylic">Acrylic Painting</label>
+                         
+                            <input type="checkbox" id="oil" name="preferences" value="oil">
+                            <label for="oil">Oil Painting</label>
+                      
+                            <input type="checkbox" id="watercolor" name="preferences" value="watercolor">
+                            <label for="watercolor">Water Color Painting</label>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td align="right"><label for="occupation"><b>Occupation:</b></label></td>
+                        <td>
+                            <select id="occupation" name="occupation" required>
+                               
+                                <option value="student">Student</option>
+                                <option value="artist">Professional Artist</option>
+                                <option value="hobbyist">Hobbyist</option>
+                                <option value="teacher">Art Teacher</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+
+               
+                    <tr>
+                        <td align="right" valign="top"><label for="bio"><b>Bio:</b></label></td>
+                        <td>
+                            <textarea 
+                                id="bio" 
+                                name="bio" 
+                                rows="4" 
+                                cols="35" 
+                                placeholder="Tell us about your artistic journey, experience, or what inspires you to paint..."
+                            ></textarea>
+                        </td>
+                    </tr>
+                    
+                
+                    <tr>
+                        <td colspan="2"><hr width="90%"></td>
+                    </tr>
+                    
+               
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="  Submit   ">
+                            &nbsp;
+                            <input type="reset" value=" Reset ">
+                        </td>
+                    </tr>
+                    
+                </table>
+                <hr width="90%">
+
+            <p>
+               
+              
+                <a href="forms.html"><i>login</i></a>
+            </p>
+
+                
+            </form>
+        </fieldset>
+    </center>
+
+</body>
+</html>
